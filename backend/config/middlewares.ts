@@ -2,7 +2,16 @@ export default [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: [
+        'http://localhost:3000',
+        'https://retro-hub-frontend.onrender.com'
+      ],
+      headers: '*', 
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
